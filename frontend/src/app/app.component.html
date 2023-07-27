@@ -1,0 +1,24 @@
+<ul class="nav justify-content-center h4  fixed-top  bg-dark" >
+  
+
+  
+  
+  
+
+  <li class="nav-item">
+    <a class="nav-link" style="color:white;" routerLink="/tasks">Task List</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " style="color:white;"   routerLink="/add">Add Task</a>
+  </li>
+  
+
+
+  <li class="nav-item">
+    <a class="nav-link"  style="color:white;"  href="#"><button style="background-color: rgb(27, 27, 27); color: white ;" (click)="exportToCSV()">Export to CSV</button></a>
+  </li>
+
+</ul>
+
+<!-- Display the current route's component -->
+<router-outlet></router-outlet>

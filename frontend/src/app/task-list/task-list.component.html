@@ -1,0 +1,50 @@
+<div class="container mt-5 text-center">
+  <div class="alert alert-danger" *ngIf="isAlertDel">
+    Task deleted successfully
+  </div>
+  <h2 class="p-3">Task List</h2>
+
+  <div class="mb-2 p-2">
+    Sort by:
+    <select [(ngModel)]="sortBy" (change)="onSortChange()">
+      <option value="" disabled>Select an option</option>
+      <option value="dueDate">Due Date</option>
+      <option value="priority">Priority</option>
+      <option value="status">Status</option>
+    </select>
+  </div>
+
+
+
+  <div class="row">
+    <div *ngFor="let task of tasks"class="col-md-4 mb-3">
+
+      
+
+
+      <div class="card h-100">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <h3>{{ task?.title }}</h3>
+      <p>{{ task?.description }}</p>
+      <p><span style="font-weight: bold;">Due Date:</span> {{ task?.dueDate | date:'yyyy-MM-dd' }}</p>
+      <p><span style="font-weight: bold;">Priority:</span> {{ task?.priority }}</p>
+      
+     <p> <span style="font-weight: bold;">Status:</span>  {{task?.status }}</p>
+
+
+      <div class="d-flex flex-row justify-content-center gap-2">
+      
+
+            <button class="btn btn-primary px-4" (click)="onEdit(task)" >Edit </button>
+            <button class="btn btn-danger" (click)="onDelete(task?._id)">Delete</button>
+            <!-- task-list.component.html -->
+
+
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
