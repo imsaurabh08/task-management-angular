@@ -32,7 +32,11 @@ mongoose.connect('mongodb+srv://srbhmodanwal:Saurabh08@cluster0.fsc50ni.mongodb.
   console.error('Error connecting to MongoDB: ', err);
 });
 
-// GET endpoint to fetch all tasks
+
+app.get("/",(req,res)=>{
+    res.send("Server is running smoothly")
+})
+
 app.get('/api/tasks', async (req, res) => {
   try {
     const tasks = await Task.find();
