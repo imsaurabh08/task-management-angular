@@ -6,14 +6,15 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const Task = require('./Models/Job');
+const compression = require('compression');
 
 
 const app = express();
-const port = 3000; // You can change this port as per your preference
+const port = 3000 || process.env.PORT; // You can change this port as per your preference
 
 // Middleware
 
-
+app.use(compression());
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -92,5 +93,5 @@ app.delete('/api/tasks/:taskId', async (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server  running on http://localhost:${port}`);
+  console.log(`Server  running on port ${port}`);
 });
