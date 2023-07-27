@@ -41,7 +41,7 @@ app.get('/api/tasks', async (req, res) => {
   try {
     const tasks = await Task.find();
     res.json(tasks);
-    console.log("hjh");
+   
     
   } catch (err) {
     console.error('Error fetching tasks:', err);
@@ -65,7 +65,7 @@ app.post('/api/tasks', async (req, res) => {
 
 // PUT endpoint to update a task's status
 app.put('/api/tasks/:taskId', async (req, res) => {
-  console.log("p");
+ 
 
   const taskId = req.params.taskId;
   
