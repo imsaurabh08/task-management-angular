@@ -10,7 +10,7 @@ import { Task } from './task';
   providedIn: 'root'
 })
 export class TaskService {
-  private baseUrl = 'ttps://backened-b4kh.onrender.com/api/tasks';
+  private baseUrl = 'https://backened-b4kh.onrender.com/api/tasks';
 
   constructor(private http: HttpClient) { }
 
