@@ -6,7 +6,7 @@ import { Task } from '../task';
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.scss'] // Pointing to the SCSS file
+  styleUrls: ['./task-list.component.scss']
 })
 export class TaskListComponent implements OnInit {
   tasks:any[] =[];
@@ -33,7 +33,7 @@ export class TaskListComponent implements OnInit {
         console.log('Task deleted successfully.');
         this.isAlertDel=true;
         setTimeout(() => {
-          this.getTasks(); // Refresh the task list after deletionthis.isAlertVisible = false;
+          this.getTasks(); 
           this.isAlertDel=false
         }, 2000);
       });
