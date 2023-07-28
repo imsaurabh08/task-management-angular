@@ -42,7 +42,7 @@ export class EditTaskComponent implements OnInit {
      console.log(history.state.task)
     this.task = history.state.task; // Fetch the task object from the state
     if (!this.task) {
-      this.router.navigate(['/tasks']); // Redirect to the tasks page if task object is not found
+      this.router.navigate(['/tasks']);
     }
 
 
